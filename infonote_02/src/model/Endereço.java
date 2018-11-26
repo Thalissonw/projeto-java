@@ -56,9 +56,33 @@ public void setCep(String cep) {
 public String estado ;
 public String cep ;
 
+
+public Endereço() {
+	super();
+	// TODO Auto-generated constructor stub
 }
- 
-	 
- 
+public Endereço(int logradouro, String numero, String complemento, String bairro, String cidade, String estado,
+		String cep) {
+	super();
+	this.logradouro = logradouro;
+	this.numero = numero;
+	this.complemento = complemento;
+	this.bairro = bairro;
+	this.cidade = cidade;
+	this.estado = estado;
+	this.cep = cep;
+}
+   
+public void mostar() {
+	// Mostrar Endereco
+	System.out.println("n/nLogradouro:/n");
+	System.out.println("Numero:" + this.numero);
+	System.out.println("Complemento:" + this.complemento);
+    System.out.println("Bairro:" + this.bairro);
+    System.out.println("Cidade:" + this.cidade);
+    System.out.println("Estado;" + this.estado);
+    System.out.println("Cep:" + this.cep);
+}
+}
 
 	

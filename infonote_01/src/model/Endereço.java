@@ -55,7 +55,10 @@ public void setCep(String cep) {
 }
 public String estado ;
 public String cep ;
-}
 
+}
+ 
+	 
+ 
 
 	

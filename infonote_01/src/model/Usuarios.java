@@ -49,7 +49,10 @@ public class Usuarios {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-		
-	}
+}
+	
+	
+
+	
 
 

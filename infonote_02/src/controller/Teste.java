@@ -24,8 +24,10 @@ public class Teste {
 		user.setMatricular(301);
 		user.setEmail("pedro@.com");
 		 
-		System.out.println(user.toString());
-
+		Usuarios user1 = new Usuarios(1,"Pedro","climbler","Pedro climbler","pedroclimbler@gmail.com","3354-4556");
+		
+		      //Mostrar Usuário
+		  user1.mostrar();
 		
 		Endereço end = new Endereço();
 		end.setBairro("tijuca");
@@ -35,22 +37,50 @@ public class Teste {
 		end.setEstado("RJ");
 		end.getLogradouro();
 		end.setNumero("45");
-		  
-		System.out.println(end.toString());
-		
-		
-		
+				
+				
+				
 		Pedido pdd = new Pedido();
 		pdd.setDataEmisao("");
 		pdd.setFormaDePagamento("");
-		pdd.setNumero(numero);
+		pdd.setNumero(18);
 		pdd.setSituacao("");
 		pdd.getValorTotal();
 		 
-		System.out.println(pdd.toString());
+		Notebook not = new Notebook();
+		not.setModelo("");
+		not.setNumeroNote(10);
+		not.setFigura("");
+		not.getEstoque();
+		not.setDescricao("");
+		not.getPreçoUnitario();
+		not.setDataCadrasto("");
+		
+	
+		
+		Notebook note = new Notebook();
+		note.setModelo("");
+		note.setNumeroNote(20);
+		note.setFigura("");
+		note.getEstoque();
+		note.setDescricao("");
+		note.getPreçoUnitario();
+		note.setDataCadrasto("");
+		
+		
+		
+		Notebook nots = new Notebook();
+		nots.setModelo("");
+		nots.setNumeroNote(11);
+		nots.setFigura("");
+		nots.getEstoque();
+		nots.setDescricao("");
+		nots.getPreçoUnitario();
+		nots.setDataCadrasto("");
+		
 		
 		
 		
 	}
-
+ 
 }
