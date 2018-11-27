@@ -20,5 +20,16 @@ public void setSubtotal(double subtotal) {
 public String toString() {
 	return "ItemDePedido [qtde=" + qtde + ", subtotal=" + subtotal + "]";
 }
+
+public ItemDePedido() {
+	super();
+	// TODO Auto-generated constructor stub
+
+public ItemDePedido(int qtde, double subtotal) {
+	super();
+	this.qtde = qtde;
+	this.subtotal = subtotal;
+ System.out.println("n/nqtde");
+ System.out.println("subtotal:this.subtotal");
 }
-	
+}

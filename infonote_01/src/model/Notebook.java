@@ -58,4 +58,40 @@ public class Notebook {
 				+ estoque + ", preçoUnitario=" + preçoUnitario + ", figura=" + figura + ", dataCadrasto=" + dataCadrasto
 				+ "]";
 	}
+	public Notebook() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+  
+
+	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double preçoUnitario, String figura,
+			String dataCadrasto) {
+		super();
+		this.numeroNote = numeroNote;
+		this.modelo = modelo;
+		this.descricao = descricao;
+		this.estoque = estoque;
+		this.preçoUnitario = preçoUnitario;
+		this.figura = figura;
+		this.dataCadrasto = dataCadrasto;
+	}
+	
+	   public void mostrar() {
+		   //Mostrar notebook
+		System.out.println("n/nNumeroNote");   
+		 System.out.println("Modelo:"+ this.modelo);
+		 System.out.println("Descricao:"+ this.descricao);
+		System.out.println("Estoque:" + this.estoque);
+		System.out.println("PreçoUnitario:" + this.preçoUnitario);
+		System.out.println("Figura:" + this.figura);
+		System.out.println("DataCadrasto:" + this.dataCadrasto);
+		
 }
+}
+
+   
+   
+   
+   
+   
+

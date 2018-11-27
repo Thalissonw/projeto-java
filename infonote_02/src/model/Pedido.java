@@ -41,8 +41,28 @@ public void setSituacao(String situacao) {
 public String toString() {
 	return "Pedido [numero=" + numero + ", dataEmisao=" + dataEmisao + ", formaDePagamento=" + formaDePagamento
 			+ ", valorTotal=" + valorTotal + ", situacao=" + situacao + "]";
-}
 
 }
+public Pedido() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+public Pedido(int numero, String dataEmisao, String formaDePagamento, double valorTotal, String situacao) {
+	super();
+	this.numero = numero;
+	this.dataEmisao = dataEmisao;
+	this.formaDePagamento = formaDePagamento;
+	this.valorTotal = valorTotal;
+	this.situacao = situacao;
+}
 
+   public void mostrar() {
+	   // Mostrar pedido
+	   System.out.println("n/nNumero:/n");
+	   System.out.println("DataEmisao:" + this.dataEmisao);
+	   System.out.println("FormaDePagamento:" + this.formaDePagamento);
+	   System.out.println("ValorTotal:" + this.valorTotal);
+	   System.out.println("Situacao:" + situacao);
+   }
+}
 

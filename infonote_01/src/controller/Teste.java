@@ -16,7 +16,7 @@ public class Teste {
 		Idp2.setSubtotal(98.75);
 		System.out.println(Idp2.toString());
 		
-		Usuarios user = new Usuarios();
+		Usuario user = new Usuario();
 		user.setNome("thalysson");
 		user.setSenha("2211");
 		user.setLogin("*****");
@@ -27,7 +27,7 @@ public class Teste {
 		System.out.println(user.toString());
 
 		
-		Endereço end = new Endereço();
+		Endereco end = new Endereco();
 		end.setBairro("tijuca");
 		end.setCep("232425");
 		end.setCidade("Rio de Janeiro");
