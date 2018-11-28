@@ -73,7 +73,7 @@ public Endereco(int logradouro, String numero, String complemento, String bairro
 	this.cep = cep;
 }
    
-public void mostar() {
+public void mostrar() {
 	// Mostrar Endereco
 	System.out.println("n/nLogradouro:/n");
 	System.out.println("Numero:" + this.numero);

@@ -22,7 +22,7 @@ public String toString() {
 }
 
 public ItemDePedido() {
-	super();
+	super();}
 	// TODO Auto-generated constructor stub
 
 public ItemDePedido(int qtde, double subtotal) {

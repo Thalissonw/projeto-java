@@ -1,6 +1,6 @@
-ackage controller;
+package controller;
 
-import model.;
+import model.*;
 
 public class Teste {
 
@@ -29,58 +29,33 @@ public class Teste {
 		      //Mostrar Usuário
 		  user1.mostrar();
 		
-		Endereco end4 = new Endereco();
-		end4.setBairro("tijuca");
-		end4.setCep("232425");
-		end4.setCidade("Rio de Janeiro");
-		end4.setComplemento("65");
-		end4.setEstado("RJ");
-		end4.setLogradouro(5);
-		end4.setNumero("45");		
-			Endereco4 end = new Endereco4("tijuca","232425","Rio de Janeiro","65","RJ",5,"45");
+		
+		//public Endereco(int logradouro, String numero, String complemento, String bairro, String cidade, String estado,String cep) {
+		Endereco end4 = new Endereco(5,"45","65","tijuca","Rio de janeiro","Rj","232425");
+				end4.mostrar();
 				
-		Pedido pdd = new Pedido();
-		pdd.setDataEmisao("12/11/18");
-		pdd.setFormaDePagamento("Dinheiro");
-		pdd.setNumero(1);
-		pdd.setSituacao("Novo");
-		pdd.setValorTotal(102);
-		  Pedido pdd  = new Pedido(1,"Dinheiro","Novo","12/11/18","102");
-		  
-		Notebook not1 = new Notebook();
-		not1.setModelo("Novo");
-		not1.setNumeroNote(10);
-		not1.setFigura("2");
-		not1.setEstoque(4);
-		not1.setDescricao("574");
-		not1.setPreçoUnitario(509);
-		not1.setDataCadrasto("11/10/18");
-	Notebook not = new Notebook ("Novo",10,"2",4,"574",509,"11/10/18");
+				
+	
+	//	public Pedido(int numero, String dataEmisao, String formaDePagamento, double valorTotal, String situacao) {
+		Pedido pdd  = new Pedido(1,"12/11/18","Dinheiro",102,"Novo");
+		   pdd.mostrar();
 		
 	
-		Notebook note2 = new Notebook();
-		note2.setModelo("Semi-Novo");
-		note2.setNumeroNote(20);
-		note2.setFigura("4");
-		note2.setEstoque(6);
-		note2.setDescricao("574");
-		note2.setPreçoUnitario(987);
-		note2.setDataCadrasto("09/10/18");
-		Notebook note = new Notebook("Semi-Novo",20,"4",6,"574",987,"09/10/18");
+	
+		// public Notebook(int numeroNote, String modelo, String descricao, int estoque, double preçoUnitario, String figura,	String dataCadrasto) {
+	Notebook not = new Notebook (10,"Novo","564",06,509,"2","11/10/18");
+		not.mostrar();
+	
+	
+	//	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double preçoUnitario, String figura,	String dataCadrasto) {
+	Notebook note = new Notebook (20,"Semi-Novo","574",06,987,"4","09/10/18");
+		note.mostrar();
 		
 		
-		Notebook nots3 = new Notebook();
-		nots3.setModelo("");
-		nots3.setNumeroNote(11);
-		nots3.setFigura("");
-		nots3.getEstoque();
-		nots3.setDescricao("");
-		nots3.getPreçoUnitario();
-		nots3.setDataCadrasto("");
+		//	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double preçoUnitario, String figura,String dataCadrasto) {
+		Notebook nots = new Notebook(11,"Usado","098",07,876,"05","07/08/18");
 		
-		
-		
-		
+		nots.mostrar();
 	}
  
 }
