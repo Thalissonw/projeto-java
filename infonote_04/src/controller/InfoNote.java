@@ -5,17 +5,23 @@ import util.Teclado;
 
 
 public class InfoNote {
+ Usuario user;
+	 
+	 boolean logado = false;
+	 
 	public static void main(String[] args) {
 		InfoNote info = new InfoNote();
 		int opcao = 8;
 do	{
 
-	{
 	  info.mostrarMenu();
 	  opcao = Teclado.lerInt("Digite sua opção");
+	  
 	  switch (opcao) {
+	  
+	  
 	 	 case 1: 
-	 		 info.efetuarLogin();
+	 		 info.EfetuarLogin ();
 	 		 break;
 	 	 case 2:
 	 		 info.CadastrarUsuario();
@@ -34,7 +40,7 @@ do	{
 	 	 case 6:
 	 		 info.manterCarrinho();
 	 		 break;
-	 		 
+	 		  
 	 	 case 7:
 	 		 if (!info.logado) {
 	 			 System.out.println("Efetue login para efetuar comprar.");
@@ -46,32 +52,15 @@ do	{
 	 	 case 8:
 	 		 System.out.println("Saida do Sistema.");
 	 		 break;
-	  
+	 		 
 	 		 default:
 	 			 System.out.println("Opção invalida!");		 
-	 			 {
+	  }
 	   Teclado.lertexto("Pressione uma tecla para continuar....");
-	  }while(opcao!=8);
-		 
-	   }
-  
-		public void efetuarLogin() {
-			String login, senha;
-			login = Teclado.lertexto("Digite o login:");
-			senha = Teclado.lertexto("Digite a senha:");
-			
-			if (login.equals("admin") && senha.equals("3232")) {
-				System.out.println("Login efetuado com sucesso.");
-				logado = true;
-			}else {
-				System.out.println("Login ou Senha inválida");
-				efetuarLogin();
-			} 
-			 boolean logado = false;
-  
-	 Usuario user;
-	 
-	 boolean logado = false;
+} while(opcao !=8);
+
+
+}
 
 	public void mostrarMenu() {
 		System.out.println("=================================");
@@ -95,7 +84,7 @@ do	{
 			logado = true;
 		}else {
 			System.out.println("Login ou Senha inválida");
-			efetuarLogin();}
+			EfetuarLogin();}
 	  
 	}
 

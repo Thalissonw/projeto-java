@@ -55,7 +55,15 @@ public Pedido(int numero, String dataEmisao, String formaDePagamento, double val
 	this.valorTotal = valorTotal;
 	this.situacao = situacao;
 }
-
+public boolean inserirItem(ItemDePedido item) {
+	for (int i = 0; i < itens.length; i++) {
+		if (itens[i] == null) {
+			itens[i] = item;
+			return true;
+		}
+	}
+	return false;
+}
    public void mostrar() {
 	   // Mostrar pedido
 	   System.out.println("n/nNumero:/n");
@@ -63,6 +71,28 @@ public Pedido(int numero, String dataEmisao, String formaDePagamento, double val
 	   System.out.println("FormaDePagamento:" + this.formaDePagamento);
 	   System.out.println("ValorTotal:" + this.valorTotal);
 	   System.out.println("Situacao:" + situacao);
+	   
+	   System.out.println("\n\nItens do pedido:\n");
+	   for (int i = O; i < itens.length; i++) {
+		   if(itens [i] != null);
+		   itens[i].mostrar();
+	   }
    }
+   private Endereco enderecoEntrega;
+   private ItemDePedido itens [] = new ItemDePedido[10];
+public Endereco getEnderecoEntrega() {
+	return enderecoEntrega;
 }
+public void setEnderecoEntrega(Endereco enderecoEntrega) {
+	this.enderecoEntrega = enderecoEntrega;
+}
+public ItemDePedido[] getItens() {
+	return itens;
+}
+public void setItens(ItemDePedido[] itens) {
+	this.itens = itens;
+}
+
+}
+
 

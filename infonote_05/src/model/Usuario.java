@@ -66,6 +66,29 @@ public Usuario(int matricular, String login, String senha, String nome, String e
 	this.email = email;
 	this.telefone = telefone;
 }
+ // inserir o pedido no vetor 
+public boolean inserirPedido(Pedido pedido) {
+	for (int i = O; i < Pedidos.length; i++) {
+		if (pedidos [i] == null) {
+			pedidos[i] = pedido;
+			return true;
+		}
+	}
+	return false;
+}
+     // inserir o endereco no vetor
+public boolean inserirEndereco (Endereco end) {
+	for (int i = O; i < enderecos.length; i++) {
+		if(enderecos [i] == null) {
+			enderecos [i] = end;
+			return true;
+		}
+	}
+	return false;
+}
+
+
+
 		 public void mostrar() {
 			 //Mostrar Usuário
 			 System.out.println("/n/nUsuário:/n");
@@ -77,6 +100,20 @@ public Usuario(int matricular, String login, String senha, String nome, String e
 			 System.out.println("Telefone:" + this.telefone);
 			 
 		 }
+		 private Endereco enderecos[] = new Endereco[10];
+		 private Pedido pedido [] = new Pedido[10];
+		public Endereco[] getEnderecos() {
+			return enderecos;
+		}
+		public void setEnderecos(Endereco[] enderecos) {
+			this.enderecos = enderecos;
+		}
+		public Pedido[] getPedido() {
+			return pedido;
+		}
+		public void setPedido(Pedido[] pedido) {
+			this.pedido = pedido;
+		}
 	}
 
 
