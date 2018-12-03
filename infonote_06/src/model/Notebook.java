@@ -9,7 +9,7 @@ public class Notebook {
 	private double preçoUnitario;
 	private String figura;
 	private String dataCadrasto;
-       public int getNumeroNote() {
+       int getNumeroNote() {
 		return numeroNote;
 	}
 	public void setNumeroNote(int numeroNote) {

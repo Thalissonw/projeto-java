@@ -35,12 +35,4 @@ public class ItemDePedido {
 	}
 
 	private Notebook notebook;
-
-	public void mostrar() {
-		// TODO Auto-generated method stub
-		
-	}
-
-		
-	}
-
+}
