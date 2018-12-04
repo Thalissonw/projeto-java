@@ -55,7 +55,7 @@ public Pedido(int numero, String dataEmisao, String formaDePagamento, double val
 	this.valorTotal = valorTotal;
 	this.situacao = situacao;
 }
-public boolean inserirItem(ItemDePedido item) {
+public  boolean inserirItem(ItemDePedido item) {
 	for (int i = 0; i < itens.length; i++) {
 		if (itens[i] == null) {
 			itens[i] = item;

@@ -1,118 +1,49 @@
 package model;
 
 public class Usuario {
-		
-		private int matricular;
-	private 	String login;
-	private	String senha;
-	private String nome;
-	private String email;
-	private String telefone;
-	@Override
-	public String toString() {
-		return "Usuarios [matricular=" + matricular + ", login=" + login + ", senha=" + senha + ", nome=" + nome
-				+ ", email=" + email + ", telefone=" + telefone + "]";
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public int getMatricular() {
-		return matricular;
-	}
-	public void setMatricular(int matricular) {
-		this.matricular = matricular;
-	}
+
+	String login;
+	String senha;
+	int tipo;
+
 	public String getLogin() {
 		return login;
 	}
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getNome() {
-		return nome;
+
+	public int getTipo() {
+		return tipo;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-			 
+	public Usuario(String login,String senha,int tipo) {
+		super();
+		this.login = login;
+		this.senha = senha;
+		this.tipo = tipo;
 		
-public Usuario() {
-	super();
-	// TODO Auto-generated constructor stub
-	  
+	}
+	
+	@Override
+	public String toString() {
+		return "Usuario[login=" + login + ", senha=" + ", tipo=" + tipo + "]";
+	}
 	
 }
-public Usuario(int matricular, String login, String senha, String nome, String email, String telefone) {
-	super();
-	this.matricular = matricular;
-	this.login = login;
-	this.senha = senha;
-	this.nome = nome;
-	this.email = email;
-	this.telefone = telefone;
-}
- // inserir o pedido no vetor 
-public boolean inserirPedido(Pedido pedido) {
-	for (int i = 0; i < Pedido.length; i++) {
-		if (pedidos [i] == null) {
-			pedidos[i] = pedido;
-			return true;
-		}
-	}
-	return false;
-}
-     // inserir o endereco no vetor
-public boolean inserirEndereco (Endereco end) {
-	for (int i = 0; i < enderecos.length; i++) {
-		if(enderecos [i] == null) {
-			enderecos [i] = end;
-			return true;
-		}
-	}
-	return false;
-}
- 
-
-		 public void mostrar() {
-			 //Mostrar Usuário
-			 System.out.println("/n/nUsuário:/n");
-			 System.out.println("Matricula:" + this.matricular);
-			 System.out.println("Login:" + this.login);
-			 System.out.println("Senha:" + this.senha);
-			 System.out.println("Nome:" + this.nome);
-			 System.out.println("Email:" + this.email);
-			 System.out.println("Telefone:" + this.telefone);
-			 
-		 }
-		 private Endereco enderecos[] = new Endereco[10];
-		 private Pedido pedido [] = new Pedido[10];
-		public Endereco[] getEnderecos() {
-			return enderecos;
-		}
-		public void setEnderecos(Endereco[] enderecos) {
-			this.enderecos = enderecos;
-		}
-		public Pedido[] getPedido() {
-			return pedido;
-		}
-		public void setPedido(Pedido[] pedido) {
-			this.pedido = pedido;
-		}
-	}
-
-

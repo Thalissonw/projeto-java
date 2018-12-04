@@ -10,7 +10,7 @@ import util.Teclado;
 public class InfoNote {
  Usuario user;
 	Notebook notebooks[] = new Notebook[10];
-	Peido pedido;
+	Pedido pedido;
  
 	 boolean logado = false;
 	 

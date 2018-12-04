@@ -1,6 +1,6 @@
 package model;
 
-public class Endereço {
+public class Endereco2 {
 	private int logradouro;
 private 	String numero ;
 private	String complemento;
@@ -57,11 +57,11 @@ public String estado ;
 public String cep ;
 
 
-public Endereço() {
+public Endereco2() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Endereço(int logradouro, String numero, String complemento, String bairro, String cidade, String estado,
+public Endereco2(int logradouro, String numero, String complemento, String bairro, String cidade, String estado,
 		String cep) {
 	super();
 	this.logradouro = logradouro;

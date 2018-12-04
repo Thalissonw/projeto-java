@@ -16,7 +16,7 @@ public class Teste {
 		Idp2.setSubtotal(98.75);
 		System.out.println(Idp2.toString());
 		
-		Usuario user = new Usuario();
+		UsuarioOld user = new UsuarioOld();
 		user.setNome("thalysson");
 		user.setSenha("2211");
 		user.setLogin("*****");
@@ -24,7 +24,7 @@ public class Teste {
 		user.setMatricular(301);
 		user.setEmail("pedro@.com");
 		 
-		Usuario user1 = new Usuario(1,"Pedro","climbler","Pedro climbler","pedroclimbler@gmail.com","3354-4556");
+		UsuarioOld user1 = new UsuarioOld(1,"Pedro","climbler","Pedro climbler","pedroclimbler@gmail.com","3354-4556");
 		
 		      //Mostrar Usuário
 		  user1.mostrar();
