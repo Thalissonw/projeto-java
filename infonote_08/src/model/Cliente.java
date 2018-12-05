@@ -1,6 +1,7 @@
 package model;
 
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements IUsuario {
+	
 private	String codigoCliente;
 private	String nome;
 private	String email;
@@ -91,6 +92,21 @@ public boolean inserirEndereco (Endereco end) {
 	}
 	return false;
 		}
+
+
+@Override
+public boolean validarlogin(String login, String senha) {
+	// TODO Auto-generated method stub
+	return false;
+}
+   @Override
+   public boolean validarLogin (String login, String senha) {
+	  if (getLogin().equals(login) && getSenha().equals(senha)) {
+		    return true;
+	  }
+	  return false;
+   }
+
 	}
 	
 

@@ -97,20 +97,19 @@ public class InfoNote {
 		System.out.println("Sair");
 	}
 
-	public void EfetuarLogin() {
+	public void efetuarLogin() {
 		String login, senha;
 		login = Teclado.lertexto("Digite o login:");
 		senha = Teclado.lertexto("Digite a senha:");
-
-		if (login.equals("admin") && senha.equals("3232")) {
-			System.out.println("Login efetuado com sucesso.");
-			logado = true;
-		} else {
-			System.out.println("Login ou Senha inválida");
-			EfetuarLogin();
-		}
-
-	}
+         if (cliente != null)
+        	 logado = cliente.validarLogin(login, senha);
+             if (logado) {
+            System.out.println("login efetuado com sucesso!");
+             }else {
+            	 System.out.println("Usuário ou senha invalidar.");
+             }
+             }
+		
 
 	public void CadastrarUsuario() {
 		System.out.println("==========");
@@ -119,30 +118,31 @@ public class InfoNote {
 		String login = Teclado.lertexto("Login");
 		String senha = Teclado.lertexto("Senha");
 		int tipo = 1;
-		String codigoCliente = Teclado.lertexto("codigo Cliente");
+	String codigoCliente =Teclado.lertexto("codigo Cliente");
 		String nome = Teclado.lertexto("Nome");
 		String email = Teclado.lertexto("Email");
 		String telefone = Teclado.lertexto("Telefone");
-
-		int longradouro = Teclado.lerInt("Logradouro");
+		
+		String  longradouro = Teclado.lertexto("Logradouro");
 		String numero = Teclado.lertexto("Número");
 		String complemento = Teclado.lertexto("Complemento");
 		String bairro = Teclado.lertexto("Bairro");
 		String cidade = Teclado.lertexto("Cidade");
 		String estado = Teclado.lertexto("Estado");
 		String cep = Teclado.lertexto("CEP");
-
-		Endereco endereco = new Endereco(longradouro, numero, complemento, bairro, cidade, estado, cep);
-		// public Endereco(int logradouro, String numero, String complemento, String
-		// bairro, String cidade, String estado, String cep) {
+			
+		 
+		Endereco endereco = new Endereco(longradouro, numero, complemento, bairro,
+	// public Endereco(int logradouro, String numero, String complemento, String
+			// bairro, String cidade, String estado, String cep) {
 		Cliente cli = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone, endereco);
-
+		
 		System.out.println("=================");
 		System.out.println("Usuarios Cadastrado Com Sucesso.");
 		System.out.println("==================");
-		System.out.println(cli);
-		System.out.println(endereco);
-
+        System.out.println(cli);
+        System.out.println(endereco);
+		
 	}
 
 	public void buscarNotebook() {
@@ -172,7 +172,7 @@ public class InfoNote {
 			}
 			if (aux == null) {
 				return;
-			
+
 				ItemDePedido item = new ItemDePedido(1, aux.getPreçoUnitario(), aux);
 
 				pedido.inserirItem(item);

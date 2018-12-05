@@ -1,6 +1,6 @@
 package model;
 
-public class Funcionario {
+public class Funcionario extends Usuario {
  private	String matricula;
 
 public String getMatricula() {
