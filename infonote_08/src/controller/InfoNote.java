@@ -1,17 +1,16 @@
 package controller;
 
-import model.Cliente;
-import model.Endereco;
-import model.ItemDePedido;
-import model.Notebook;
-import model.Pedido;
-import model.Usuario;
+import model.*;
+
 import util.Teclado;
 
 public class InfoNote {
 	Usuario user;
 	Notebook notebooks[] = new Notebook[10];
 	Pedido pedido;
+
+	private static Cliente clienteGlobal = null;
+	private static Funcionario funcionarioGlobal = null;
 
 	boolean logado = false;
 
@@ -44,7 +43,7 @@ public class InfoNote {
 			switch (opcao) {
 
 			case 1:
-				info.EfetuarLogin();
+				info.efetuarLogin();
 				break;
 			case 2:
 				info.CadastrarUsuario();
@@ -101,15 +100,14 @@ public class InfoNote {
 		String login, senha;
 		login = Teclado.lertexto("Digite o login:");
 		senha = Teclado.lertexto("Digite a senha:");
-         if (cliente != null)
-        	 logado = cliente.validarLogin(login, senha);
-             if (logado) {
-            System.out.println("login efetuado com sucesso!");
-             }else {
-            	 System.out.println("Usuário ou senha invalidar.");
-             }
-             }
-		
+		if (clienteGlobal != null)
+			logado = clienteGlobal.validarLogin(login, senha);
+		if (logado) {
+			System.out.println("login efetuado com sucesso!");
+		} else {
+			System.out.println("Usuário ou senha invalidar.");
+		}
+	}
 
 	public void CadastrarUsuario() {
 		System.out.println("==========");
@@ -118,31 +116,30 @@ public class InfoNote {
 		String login = Teclado.lertexto("Login");
 		String senha = Teclado.lertexto("Senha");
 		int tipo = 1;
-	String codigoCliente =Teclado.lertexto("codigo Cliente");
+		String codigoCliente = Teclado.lertexto("codigo Cliente");
 		String nome = Teclado.lertexto("Nome");
 		String email = Teclado.lertexto("Email");
 		String telefone = Teclado.lertexto("Telefone");
-		
-		String  longradouro = Teclado.lertexto("Logradouro");
+
+		int longradouro = Teclado.lerInt("Logradouro");
 		String numero = Teclado.lertexto("Número");
 		String complemento = Teclado.lertexto("Complemento");
 		String bairro = Teclado.lertexto("Bairro");
 		String cidade = Teclado.lertexto("Cidade");
 		String estado = Teclado.lertexto("Estado");
 		String cep = Teclado.lertexto("CEP");
-			
-		 
-		Endereco endereco = new Endereco(longradouro, numero, complemento, bairro,
-	// public Endereco(int logradouro, String numero, String complemento, String
-			// bairro, String cidade, String estado, String cep) {
-		Cliente cli = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone, endereco);
-		
+
+		Endereco endereco = new Endereco(longradouro, numero, complemento, bairro, cidade, estado, cep);
+
+		Cliente cliente = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone, endereco);
+		clienteGlobal = cliente;
+
 		System.out.println("=================");
 		System.out.println("Usuarios Cadastrado Com Sucesso.");
 		System.out.println("==================");
-        System.out.println(cli);
-        System.out.println(endereco);
-		
+		System.out.println(cliente);
+		System.out.println(endereco);
+
 	}
 
 	public void buscarNotebook() {
@@ -154,35 +151,36 @@ public class InfoNote {
 		}
 	}
 
-	public void manterCarrinho() {
-
 	public void inserirNotebook() {
 		// Lê o notebook escolhido do teclado
-		String numeroNote = Teclado.lertexto("Informe o número do notebook" + "para compra:");
-
-		// criar pedido
+		String numeroNote = Teclado.lertexto("Informe o número do notebook" + " para compra: ");
+		// Cria pedido
 		if (pedido == null) {
 			pedido = new Pedido();
-
-			Notebook aux = null;
-			for (int i = 0; i < notebooks.length; i++) {
-				if (notebooks[i] != null && numeroNote.equals(notebooks[i].getNumeroNote())) {
-					aux = notebooks[i];
-				}
-			}
-			if (aux == null) {
-				return;
-
-				ItemDePedido item = new ItemDePedido(1, aux.getPreçoUnitario(), aux);
-
-				pedido.inserirItem(item);
-			}
-			System.out.println("buscarNotebook - Em Construção");
 		}
+		// Busca notebook selecionado
+		Notebook aux = null;
+		for (int i = 0; i < notebooks.length; i++) {
+			if (notebooks[i] != null && numeroNote.equals(notebooks[i].getNumeroNote())) {
+				aux = notebooks[i];
+			}
+		}
+		// Se não existir, interrompe
+		if (aux == null) {
+			return;
+		}
+		// Cria item
+		ItemDePedido item = new ItemDePedido(1, aux.getPreçoUnitario(), aux);
+		// Insere item no pedido
+		pedido.inserirItem(item);
 	}
 
 	public void efetuarCompra() {
 		System.out.println("efetuarCompra - Em Contrução");
 
+	}
+
+	public void manterCarrinho() {
+		System.out.println("manterCarrinho - Em Contrucão");
 	}
 }

@@ -1,6 +1,6 @@
 package model;
 
 public interface IUsuario {
-	boolean validarlogin(String login, String senha);
+	boolean validarLogin(String login, String senha);
 
 }

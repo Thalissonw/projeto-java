@@ -94,11 +94,7 @@ public boolean inserirEndereco (Endereco end) {
 		}
 
 
-@Override
-public boolean validarlogin(String login, String senha) {
-	// TODO Auto-generated method stub
-	return false;
-}
+
    @Override
    public boolean validarLogin (String login, String senha) {
 	  if (getLogin().equals(login) && getSenha().equals(senha)) {
